@@ -28,7 +28,7 @@ public class WeatherController {
                model.addAttribute("weatherData", weatherData);
                return "weather"; // Your weather details page template
           } catch (Exception e) {
-               System.out.println("city not found");
+               System.out.println( e.getMessage());
                model.addAttribute("errorMessage", "City not found.");
                return "index"; // Redirect back to the landing page with the error message
           }

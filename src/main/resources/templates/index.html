@@ -6,99 +6,6 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Weather App</title>
      <link rel="stylesheet" href="style.css" th:href="@{/style.css}">
-     <style>
-          /* style.css */
-          body {
-               font-family: sans-serif;
-               margin: 0;
-               padding: 0;
-               background-color: #f0f0f0;
-               /* Light gray background */
-               color: #333;
-               /* Dark gray text color for better contrast */
-          }
-
-          header {
-               background-color: #333;
-               color: #fff;
-               padding: 1rem 0;
-               text-align: center;
-          }
-
-          nav ul {
-               list-style: none;
-               padding: 0;
-               margin: 0;
-          }
-
-          nav li {
-               display: inline;
-               margin: 0 1rem;
-          }
-
-          nav a {
-               color: #fff;
-               text-decoration: none;
-          }
-
-          .hero {
-               /* background-image: url('weather-background.jpg'); */
-               /* Replace with your image */
-               background-size: cover;
-               background-position: center;
-               color: #fff;
-               text-align: center;
-               padding: 5rem 0;
-          }
-
-          .hero-content {
-               max-width: 600px;
-               margin: 0 auto;
-               color: #333;
-          }
-
-          .locationForm {
-               margin-top: 2rem;
-          }
-
-          .location {
-               padding: 0.5rem;
-               border: none;
-               border-radius: 5px;
-               width: 70%;
-          }
-
-          .getWeather {
-               padding: 0.5rem 1rem;
-               background-color: #007bff;
-               color: #fff;
-               border: none;
-               border-radius: 5px;
-               cursor: pointer;
-               margin-left: 10px;
-               /* Add some space between input and button */
-          }
-
-
-          footer {
-               background-color: #333;
-               color: #fff;
-               text-align: center;
-               padding: 1rem 0;
-               position: fixed;
-               /* Fixed to the bottom */
-               bottom: 0;
-               width: 100%;
-          }
-
-          /* Responsive design - Adjust as needed */
-          @media (max-width: 768px) {
-               #location {
-                    width: 60%;
-                    /* Slightly smaller input on smaller screens */
-               }
-          }
-     </style>
 </head>
 
 <body>
@@ -118,18 +25,16 @@
                <div class="hero-content">
                     <h2>Get the latest weather updates</h2>
                     <p>Check the weather forecast for your location and around the world.</p>
-                    <!-- <form action="/weather" method="get">
-                         <input type="text" placeholder="Search for location" class="search-box" name="city">
-                         <button type="submit">Search</button>
-                    </form> -->
                     <form class="locationForm" action="/weather" method="get">
                          <input type="text" name="city" class="location" placeholder="Enter city name" required>
                          <button type="submit" class="getWeather">Get Weather</button>
                     </form>
                </div>
+               <div th:if="${errorMessage}" class="error-message-alert" th:text="${errorMessage}"></div>
           </section>
 
-          <div th:text="${errorMessage}"></div>
+     
+     
 
      </main>
 

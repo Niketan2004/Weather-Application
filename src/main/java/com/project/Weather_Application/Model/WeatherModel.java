@@ -1,5 +1,6 @@
 package com.project.Weather_Application.Model;
 
+import java.sql.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -13,6 +14,8 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherModel {
 
+    private String name;
+
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
@@ -20,6 +23,7 @@ public class WeatherModel {
         private int all;
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
@@ -33,15 +37,17 @@ public class WeatherModel {
 
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
     public class Sys {
         private String country;
-        private int sunrise;
-        private int sunset;
+        private String sunrise ;
+        private String sunset;
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
@@ -53,6 +59,7 @@ public class WeatherModel {
 
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
@@ -66,6 +73,5 @@ public class WeatherModel {
     private Sys sys;
     private List<Weather> weather;
     private Wind wind;
-    private String name;
 
 }

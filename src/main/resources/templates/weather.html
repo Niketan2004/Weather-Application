@@ -5,94 +5,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Weather Details</title>
-     <link rel="stylesheet" th:href="@{style.css}">
-     <style>
-          /* Styles for the details page */
-          #details-container {
-               max-width: 800px;
-               margin: 20px auto;
-               padding: 20px;
-               border: 1px solid #ccc;
-               border-radius: 5px;
-               background-color: #fff;
-               display: flex;
-               /* Use flexbox for layout */
-               flex-direction: column;
-               /* Stack elements vertically */
-               align-items: center;
-               /* Center horizontally */
-          }
-
-          #details-container h2 {
-               text-align: center;
-               margin-bottom: 20px;
-               /* Add some space below the title */
-          }
-
-          #weather-icon-container {
-               text-align: center;
-               /* Center the icon */
-               margin-bottom: 20px;
-          }
-
-          #temperature-info {
-               display: flex;
-               justify-content: center;
-               /* Center the temperature items */
-               gap: 20px;
-               /* Space between temperature items */
-               margin-bottom: 20px;
-          }
-
-          .temp-item {
-               text-align: center;
-          }
-
-          #sun-info {
-               display: flex;
-               justify-content: center;
-               gap: 20px;
-               margin-bottom: 20px;
-          }
-
-          .sun-item {
-               text-align: center;
-          }
-
-          #wind-info {
-               text-align: center;
-               margin-bottom: 20px;
-          }
-
-          .detail-item {
-               margin-bottom: 10px;
-               display: flex;
-               /* Use flexbox for label and value */
-               align-items: center;
-               /* Align label and value vertically */
-          }
-
-          .detail-label {
-               font-weight: bold;
-               width: 150px;
-               /* Adjust width as needed */
-          }
-
-          .forecast-container {
-               display: flex;
-               flex-wrap: wrap;
-               justify-content: center;
-               margin-top: 20px;
-               /* Add some space above forecast */
-          }
-
-          .forecast-item {
-               border: 1px solid #ccc;
-               margin: 5px;
-               padding: 10px;
-               text-align: center;
-          }
-     </style>
+     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
 <body>
@@ -105,13 +18,13 @@
           </nav>
      </header>
 
-     <main>
+     <main class="weather-main" th:if="${weatherData != null}">
           <section id="details-container">
                <h2 th:text="${weatherData.name}"></h2>
 
                <div id="weather-icon-container">
-                    <!-- <img th:src="'http://openweathermap.org/img/w/' + ${weatherData.weather[0].icon} + '.png'"
-                         alt="Weather Icon"> -->
+                    <img th:src="'http://openweathermap.org/img/w/' + ${weatherData.weather[0].icon} + '.png'"
+                         alt="Weather Icon">
                     <p th:text="${weatherData.weather[0].description}"></p>
                </div>
 
@@ -133,13 +46,11 @@
                <div id="sun-info">
                     <div class="sun-item">
                          <p>Sunrise</p>
-                         <span
-                              th:text="${new java.text.SimpleDateFormat('HH:mm:ss').format(new java.util.Date(weatherData.sys.sunrise * 1000))}"></span>
+                         <span th:text="${weatherData.sys.sunrise}"></span>
                     </div>
                     <div class="sun-item">
                          <p>Sunset</p>
-                         <span
-                              th:text="${new java.text.SimpleDateFormat('HH:mm:ss').format(new java.util.Date(weatherData.sys.sunset * 1000))}"></span>
+                         <span th:text="${weatherData.sys.sunset}"></span>
                     </div>
                </div>
 
