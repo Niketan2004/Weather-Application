@@ -1,6 +1,5 @@
 package com.project.Weather_Application.Model;
 
-import java.sql.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
