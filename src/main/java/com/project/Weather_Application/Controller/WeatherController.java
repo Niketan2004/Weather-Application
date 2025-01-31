@@ -19,6 +19,11 @@ public class WeatherController {
           return "index";
      }
 
+     @GetMapping("/about")
+     public String aboutPage() {
+          return "about";
+     }
+
      @GetMapping("/weather")
      public String getWeather(@RequestParam("city") String location, Model model) {
           System.out.println("city is " + location);
