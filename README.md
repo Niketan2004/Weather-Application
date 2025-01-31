@@ -47,7 +47,14 @@ mvn spring-boot:run
 ---
 
 ## 📸 Screenshots
-🌟 Add screenshots of your application here 🌟
+**Dashboard**
+![Dashboard image](https://github.com/user-attachments/assets/34a5b81b-429d-4244-bad9-02ba33c33c72)
+
+**Weather Page**
+![Weather page](https://github.com/user-attachments/assets/6b6155d9-90ed-4978-a565-6cb5def124fb)
+
+**About**
+![About page](https://github.com/user-attachments/assets/9457ee18-4112-4a9c-b998-d4e573210cde)
 
 ---
 
