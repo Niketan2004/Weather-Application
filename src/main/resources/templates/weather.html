@@ -5,75 +5,87 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Weather Details</title>
-     <link rel="stylesheet" th:href="@{/style.css}">
+     <link rel="stylesheet" href="/css/output.css" th:href="@{/css/output.css}">
 </head>
 
-<body>
-     <header>
-          <h1>Weather App</h1>
-          <nav>
-               <ul>
-                    <li><a th:href="@{/}">Home</a></li>
-                    <li><a th:href="@{/about}">About</a></li>
-               </ul>
-          </nav>
+<body class="bg-sky-300 font-sans">
+     <header class="bg-sky-500 text-white py-4 shadow-md">
+          <div class="container mx-auto px-4">
+               <h1 class="text-2xl font-bold text-center">Weather App</h1>
+               <nav class="mt-2">
+                    <ul class="flex justify-center">
+                         <li class="mr-6">
+                              <a th:href="@{/}" class="hover:text-sky-200 font-medium">Home</a>
+                         </li>
+                         <li>
+                              <a th:href="@{/about}" class="hover:text-sky-200 font-medium">About</a>
+                         </li>
+                    </ul>
+               </nav>
+          </div>
      </header>
 
-     <main class="weather-main" th:if="${weatherData != null}">
-          <section id="details-container">
-               <h2 th:text="${weatherData.name}"></h2>
+     <main class="container mx-auto px-4 py-8" th:if="${weatherData != null}">
+          <section id="details-container" class="bg-blue-400 rounded-lg shadow-md p-8">
+               <h2 th:text="${weatherData.name}" class="text-3xl font-bold mb-4 text-center text-sky-500"></h2>
 
-               <div id="weather-icon-container">
+               <div id="weather-icon-container" class="text-center mb-6">
                     <img th:src="'http://openweathermap.org/img/w/' + ${weatherData.weather[0].icon} + '.png'"
-                         alt="Weather Icon">
-                    <p th:text="${weatherData.weather[0].description}"></p>
+                         alt="Weather Icon" class="mx-auto">
+                    <p th:text="${weatherData.weather[0].description}" class="italic uppercase text-gray-600 mt-2"></p>
                </div>
 
-               <div id="temperature-info">
+               <div id="temperature-info" class="flex justify-around mb-6">
                     <div class="temp-item">
-                         <p>Feels Like</p>
-                         <span th:text="${weatherData.main.feels_like} + '°C'"></span>
+                         <p class="font-medium text-gray-600">Feels Like</p>
+                         <span th:text="${weatherData.main.feels_like} + '°C'" class="text-lg"></span>
                     </div>
                     <div class="temp-item">
-                         <p>Min Temp</p>
-                         <span th:text="${weatherData.main.temp_min} + '°C'"></span>
+                         <p class="font-medium text-gray-600">Min Temp</p>
+                         <span th:text="${weatherData.main.temp_min} + '°C'" class="text-lg"></span>
                     </div>
                     <div class="temp-item">
-                         <p>Max Temp</p>
-                         <span th:text="${weatherData.main.temp_max} + '°C'"></span>
+                         <p class="font-medium text-gray-600">Max Temp</p>
+                         <span th:text="${weatherData.main.temp_max} + '°C'" class="text-lg"></span>
                     </div>
                </div>
 
-               <div id="sun-info">
+               <div id="sun-info" class="flex justify-around mb-6">
                     <div class="sun-item">
-                         <p>Sunrise</p>
-                         <span th:text="${weatherData.sys.sunrise}"></span>
+                         <p class="font-medium text-gray-600">Sunrise</p>
+                         <span th:text="${weatherData.sys.sunrise}" class="text-lg"></span>
                     </div>
                     <div class="sun-item">
-                         <p>Sunset</p>
-                         <span th:text="${weatherData.sys.sunset}"></span>
+                         <p class="font-medium text-gray-600">Sunset</p>
+                         <span th:text="${weatherData.sys.sunset}" class="text-lg"></span>
                     </div>
                </div>
 
-               <div id="wind-info">
-                    <p>Wind Speed: <span th:text="${weatherData.wind.speed} + ' m/s'"></span></p>
+
+               <div id="wind-info" class="text-center mb-6">
+                    <p class="font-medium text-gray-600">Wind Speed: <span th:text="${weatherData.wind.speed} + ' m/s'"
+                              class="text-lg"></span></p>
                </div>
 
-               <div class="detail-item">
-                    <span class="detail-label">Humidity:</span>
-                    <span th:text="${weatherData.main.humidity} + '%'"></span>
+               <div class="flex place-content-around">
+                    <div class="detail-item  items-center mb-4">
+                         <span class="detail-label font-medium text-gray-600 w-24">Humidity:</span>
+                         <span th:text="${weatherData.main.humidity} + '%'" class="text-lg"></span>
+                    </div>
+                    <div class="detail-item  items-center mb-4">
+                         <span class="detail-label font-medium text-gray-600 w-24">Pressure:</span>
+                         <span th:text="${weatherData.main.pressure} + ' hPa'" class="text-lg"></span>
+                    </div>
                </div>
-               <div class="detail-item">
-                    <span class="detail-label">Pressure:</span>
-                    <span th:text="${weatherData.main.pressure} + ' hPa'"></span>
-               </div>
+
 
           </section>
      </main>
 
-     <footer>
+     <footer class="bg-gray-800 text-white py-4 text-center">
           <p>&copy; 2025 Weather App</p>
      </footer>
+
 </body>
 
 </html>
