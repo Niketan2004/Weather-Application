@@ -18,8 +18,9 @@ import com.project.Weather_Application.Model.WeatherModel;
 @Service
 public class WeatherService {
      // Gets api key from the application.properties
-     @Value("${API_KEY}")
+     @Value("${WEATHER_API_KEY}")
      private String key;
+     // = "${WEATHER_API_KEY}";
 
      // method to find temperature
      public WeatherModel getWeatherData(String city) {
@@ -58,8 +59,7 @@ public class WeatherService {
 
      }
 
-
-     //converting temperature from kelvin to degree celcius
+     // converting temperature from kelvin to degree celcius
      private void convertKelvinToCelsius(WeatherModel weatherModel) {
           if (weatherModel != null && weatherModel.getMain() != null) {
                double tempKelvin = weatherModel.getMain().getTemp();
@@ -80,8 +80,7 @@ public class WeatherService {
           }
      }
 
-
-     //converting time from UTC to IST
+     // converting time from UTC to IST
      private void convertUnixTimestampsToIST(WeatherModel weatherModel) {
           if (weatherModel != null && weatherModel.getSys() != null) {
                try {
@@ -114,7 +113,7 @@ public class WeatherService {
           }
      }
 
-     //formats the timestamp of above converted format  into  IST format 
+     // formats the timestamp of above converted format into IST format
      private String formatUnixTimestampToIST(long unixTimestamp) {
           Instant instant = Instant.ofEpochSecond(unixTimestamp);
           LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.of("Asia/Kolkata")); // IST
