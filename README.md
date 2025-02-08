@@ -48,13 +48,13 @@ mvn spring-boot:run
 
 ## 📸 Screenshots
 **Dashboard**
-![Dashboard image](https://github.com/user-attachments/assets/34a5b81b-429d-4244-bad9-02ba33c33c72)
+![Dashboard image](https://github.com/user-attachments/assets/63dbb288-7bde-40ee-836b-c8a7ac39c0b8)
 
 **Weather Page**
-![Weather page](https://github.com/user-attachments/assets/6b6155d9-90ed-4978-a565-6cb5def124fb)
+![Weather page](https://github.com/user-attachments/assets/7d23387e-6395-4bc5-b3aa-cc49e5678ee9)
 
 **About**
-![About page](https://github.com/user-attachments/assets/9457ee18-4112-4a9c-b998-d4e573210cde)
+![About page](https://github.com/user-attachments/assets/c47958f2-c411-4fb3-a1ea-f8637eaa72bd)
 
 ---
 
