@@ -1,7 +1,7 @@
-# ☀️ Weather Application (Spring Boot)
+# ☀️ WeatherScope (A Weather Application in Spring Boot)
 
 ## 📌 Project Overview
-This **Weather Application** is built using **Java Spring Boot** to fetch and display real-time weather data for any searched city. It integrates with the **OpenWeatherMap API** to retrieve weather details dynamically and displays them on the frontend using **Thymeleaf** and **Tailwind CSS**.
+This **WeatherScope** is a Weather Application built using **Java Spring Boot** to fetch and display real-time weather data for any searched city. It integrates with the **OpenWeatherMap API** to retrieve weather details dynamically and displays them on the frontend using **Thymeleaf** and **Tailwind CSS**.
 
 ---
 
